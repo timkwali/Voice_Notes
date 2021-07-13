@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-kapt'
 //    kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    id 'kotlin-parcelize'
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -63,4 +65,5 @@ dependencies {
 
     implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
     implementation 'androidx.legacy:legacy-support-core-ui:1.0.0'
+
 }

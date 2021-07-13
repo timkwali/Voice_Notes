@@ -10,4 +10,9 @@
     <string name="press_the_button_below_to_add_new_notes">Press The Button Below To Add New Notes</string>
     <string name="read_note">Read Note</string>
     <string name="lorem_ipsum_dolor_lorem">Lorem ipsum dolor lorem</string>
+    <string name="date_ntime">date\ntime</string>
+    <string name="deleting_note">Deleting Note…</string>
+    <string name="note_deleted">Note Deleted</string>
+    <string name="note_not_deleted">Note not deleted!</string>
+    <string name="new_note">New Note</string>
 </resources>

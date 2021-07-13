@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.wear.widget.WearableLinearLayoutManager
 import com.example.voicenotes.R
@@ -35,10 +36,14 @@ class HomeFragment : Fragment(), OnItemClickListener {
         noteAdapter = NotesRVAdapter(notesList, this)
 
         binding.apply {
+            homeAddNoteIb.setOnClickListener{
+                findNavController().navigate(R.id.newNoteFragment)
+            }
+
             homeNotesListRv.apply {
                 adapter = noteAdapter
                 layoutManager = LinearLayoutManager(requireContext())
-//                isCircularScrollingGestureEnabled = false
+                isCircularScrollingGestureEnabled = true
 //                isEdgeItemsCenteringEnabled = true
             }
         }
@@ -50,7 +55,8 @@ class HomeFragment : Fragment(), OnItemClickListener {
     }
 
     override fun onItemClick(note: Note, position: Int) {
-        toast(note.note)
+        val action = HomeFragmentDirections.actionHomeFragmentToNoteDetailsFragment3(note)
+        findNavController().navigate(action)
     }
 
     private val notesList = listOf (

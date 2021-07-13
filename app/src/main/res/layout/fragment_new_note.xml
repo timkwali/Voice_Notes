@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.newnote.NewNoteFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:boxedEdges="all">
+
+                <ImageView
+                    android:id="@+id/newNote_logo_iv"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/newNote_back_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_arrow_back"
+            android:fontFamily="@font/yatra_one"
+            android:gravity="center_vertical"
+            android:text="@string/new_note"
+            android:textColor="@color/jasmine"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/jasmine"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newNote_back_tv">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
+                    <ImageButton
+                        android:id="@+id/newNote_save_ib"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_save"
+                        android:backgroundTint="@color/transparent"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="2dp"/>
+
+                    <ImageButton
+                        android:id="@+id/newNote_mic_ib"
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:src="@drawable/ic_mic"
+                        android:backgroundTint="@color/transparent"
+                        android:layout_weight="1"/>
+
+                    <ImageButton
+                        android:id="@+id/newNote_delete_ib"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_delete"
+                        android:layout_gravity="end"
+                        android:backgroundTint="@color/transparent"/>
+                </LinearLayout>
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp">
+                    <TextView
+                        android:id="@+id/newNote_note_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lorem_ipsum_dolor_lorem"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:gravity="center_horizontal"/>
+                </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.wear.widget.BoxInsetLayout>

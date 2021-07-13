@@ -7,18 +7,70 @@
     tools:context=".ui.notedetails.NoteDetailsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/noteDetails_cancelProgressBar_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_77"
+        android:elevation="1dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.wear.widget.CircularProgressLayout
+            android:id="@+id/noteDetails_circularProgress_cpl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            app:colorSchemeColors="#BE1414"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="4dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <ImageButton
+                    android:id="@+id/noteDetails_image_ib"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_bg_logout"
+                    android:src="@drawable/ic_clear" />
+            </FrameLayout>
+        </androidx.wear.widget.CircularProgressLayout>
+
+        <TextView
+            android:id="@+id/deleting_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:elevation="5dp"
+            android:text="@string/deleting_note"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noteDetails_circularProgress_cpl" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:boxedEdges="all">
 
-<!--        <ImageView-->
-<!--            android:id="@+id/noteDetails_logo_iv"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="20dp"-->
-<!--            android:src="@drawable/logo"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
+        <ImageView
+            android:id="@+id/noteDetails_logo_iv"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/noteDetails_back_tv"
@@ -38,6 +90,7 @@
             android:layout_height="0dp"
             android:layout_margin="5dp"
             android:backgroundTint="@color/jasmine"
+            app:cardCornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -61,9 +114,10 @@
                         android:layout_marginTop="2dp"/>
 
                     <TextView
+                        android:id="@+id/noteDetails_date_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="6 July 2021 \n 6:15 PM"
+                        android:text="@string/date_ntime"
                         android:textSize="8sp"
                         android:gravity="center"
                         android:textColor="@color/black"

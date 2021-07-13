@@ -3,16 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/noteDetailsFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.voicenotes.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_noteDetailsFragment3"
+            app:destination="@id/noteDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/noteDetailsFragment"
         android:name="com.example.voicenotes.ui.notedetails.NoteDetailsFragment"
         android:label="fragment_note_details"
-        tools:layout="@layout/fragment_note_details" />
+        tools:layout="@layout/fragment_note_details" >
+        <argument
+            android:name="note"
+            app:argType="com.example.voicenotes.data.Note" />
+    </fragment>
+    <fragment
+        android:id="@+id/newNoteFragment"
+        android:name="com.example.voicenotes.ui.newnote.NewNoteFragment"
+        android:label="fragment_new_note"
+        tools:layout="@layout/fragment_new_note" />
 </navigation>
