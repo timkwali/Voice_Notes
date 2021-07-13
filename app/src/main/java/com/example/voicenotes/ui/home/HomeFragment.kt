@@ -44,13 +44,13 @@ class HomeFragment : Fragment(), OnItemClickListener {
         }
     }
 
-    override fun onItemClick(note: Note, position: Int) {
-        toast(note.note)
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onItemClick(note: Note, position: Int) {
+        toast(note.note)
     }
 
     private val notesList = listOf (

@@ -12,7 +12,7 @@
         android:id="@+id/noteItem_note_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor lorem"
+        android:text="@string/lorem_ipsum_dolor_lorem"
         android:textSize="14sp"
         android:textColor="@color/black"
         android:textStyle="bold"
