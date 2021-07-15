@@ -66,8 +66,8 @@
 
         <ImageView
             android:id="@+id/noteDetails_logo_iv"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
             android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -111,7 +111,8 @@
                         android:src="@drawable/ic_speaker"
                         android:backgroundTint="@color/transparent"
                         android:layout_gravity="start"
-                        android:layout_marginTop="2dp"/>
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="5dp"/>
 
                     <TextView
                         android:id="@+id/noteDetails_date_tv"
@@ -130,7 +131,9 @@
                         android:layout_height="20dp"
                         android:src="@drawable/ic_delete"
                         android:layout_gravity="end"
-                        android:backgroundTint="@color/transparent"/>
+                        android:backgroundTint="@color/transparent"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="5dp"/>
                 </LinearLayout>
                 <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"

@@ -6,6 +6,8 @@ import android.support.wearable.activity.ConfirmationActivity
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.voicenotes.R
+import com.muddzdev.styleabletoastlibrary.StyleableToast
 
 object Utils {
     fun View.visible() {
@@ -25,6 +27,7 @@ object Utils {
             duration: Int = Toast.LENGTH_LONG,
             context: Context = requireContext()
     ) {
+//       StyleableToast.makeText(context, message, R.style.toastStyle).show()
        Toast.makeText(context, message, duration).show()
     }
 

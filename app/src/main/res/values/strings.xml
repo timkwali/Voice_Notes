@@ -15,4 +15,7 @@
     <string name="note_deleted">Note Deleted</string>
     <string name="note_not_deleted">Note not deleted!</string>
     <string name="new_note">New Note</string>
+    <string name="press_the_mic_to_add_new_note">Press the mic to add new note.</string>
+    <string name="_6_jul_21">6 Jul \'21</string>
+    <string name="_6_15_pm">6:15 PM</string>
 </resources>
