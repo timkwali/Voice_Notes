@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/settingsItem_logo_siv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/dark_grey"
+        android:padding="10dp"
+        android:scaleType="center"
+        android:src="@drawable/google_g"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/logo_bg" />
+
+    <TextView
+        android:id="@+id/settingsItem_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/yatra_one"
+        android:gravity="center"
+        android:text="@string/settings"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/settingsItem_logo_siv"
+        app:layout_constraintStart_toEndOf="@+id/settingsItem_logo_siv"
+        app:layout_constraintTop_toTopOf="@+id/settingsItem_logo_siv" />
+</androidx.constraintlayout.widget.ConstraintLayout>

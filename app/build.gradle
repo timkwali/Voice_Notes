@@ -78,4 +78,7 @@ dependencies {
 
     //Styleable Toast
     implementation 'com.muddzdev:styleabletoast:2.0.1'
+
+    //Material Design
+    implementation 'com.google.android.material:material:1.4.0'
 }

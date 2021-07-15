@@ -1,6 +1,5 @@
 package com.example.voicenotes.ui.home
 
-import android.icu.util.BuddhistCalendar
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,16 +9,17 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.wear.widget.WearableLinearLayoutManager
 import com.example.voicenotes.R
 import com.example.voicenotes.data.Note
 import com.example.voicenotes.data.NotesViewmodel
 import com.example.voicenotes.databinding.FragmentHomeBinding
-import com.example.voicenotes.utils.Utils.toast
+import com.example.voicenotes.utils.OnItemClickListener
+import com.example.voicenotes.utils.Utils.gone
+import com.example.voicenotes.utils.Utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(), OnItemClickListener {
+class HomeFragment : Fragment(), OnItemClickListener<Note> {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -41,6 +41,9 @@ class HomeFragment : Fragment(), OnItemClickListener {
 
         getAllNotes()
         binding.apply {
+            homeSettingsIb.setOnClickListener {
+                findNavController().navigate(R.id.settingsFragment)
+            }
             homeAddNoteIb.setOnClickListener{
                 findNavController().navigate(R.id.newNoteFragment)
             }
@@ -52,8 +55,8 @@ class HomeFragment : Fragment(), OnItemClickListener {
         _binding = null
     }
 
-    override fun onItemClick(note: Note, position: Int) {
-        val action = HomeFragmentDirections.actionHomeFragmentToNoteDetailsFragment3(note)
+    override fun onItemClick(item: Note, position: Int) {
+        val action = HomeFragmentDirections.actionHomeFragmentToNoteDetailsFragment3(item)
         findNavController().navigate(action)
     }
 
@@ -62,6 +65,7 @@ class HomeFragment : Fragment(), OnItemClickListener {
         viewmodel.allNotes.observe(viewLifecycleOwner, Observer {
             notesList = it
             noteAdapter = NotesRVAdapter(notesList, this)
+            if(notesList.isEmpty()) binding.homeMessageTv.visible() else binding.homeMessageTv.gone()
             binding.apply {
                 homeNotesListRv.apply {
                     adapter = noteAdapter

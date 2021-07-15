@@ -28,4 +28,9 @@
         android:name="com.example.voicenotes.ui.newnote.NewNoteFragment"
         android:label="fragment_new_note"
         tools:layout="@layout/fragment_new_note" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.voicenotes.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

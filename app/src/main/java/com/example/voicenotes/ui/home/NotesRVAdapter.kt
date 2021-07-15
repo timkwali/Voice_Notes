@@ -5,14 +5,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.voicenotes.data.Note
 import com.example.voicenotes.databinding.NotesItemBinding
+import com.example.voicenotes.utils.OnItemClickListener
 
-class NotesRVAdapter (private val notes: List<Note>, private val clickListener: OnItemClickListener):
+class NotesRVAdapter (private val notes: List<Note>, private val clickListener: OnItemClickListener<Note>):
         RecyclerView.Adapter<NotesRVAdapter.NotesViewHolder>() {
 
     inner class NotesViewHolder(private val binding: NotesItemBinding):
         RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(note: Note, action: OnItemClickListener) {
+            fun bind(note: Note, action: OnItemClickListener<Note>) {
                 binding.apply {
                     val date = note.date.split(" ")
                     noteItemNoteTv.text = note.note
@@ -39,8 +40,4 @@ class NotesRVAdapter (private val notes: List<Note>, private val clickListener: 
     override fun getItemCount(): Int {
         return notes.size
     }
-}
-
-interface OnItemClickListener {
-    fun onItemClick(note: Note, position: Int)
 }

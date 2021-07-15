@@ -85,9 +85,8 @@ class NewNoteFragment : Fragment() {
     private fun saveNote() {
         val note = binding.newNoteNoteTv.text.toString()
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(Date())
-        val a = "09/7/2021 06:51:29"
         val meridian = if(sdf.substring(10, 12).toInt() < 12) "AM" else "PM"
-        val month = when(sdf.substring(3, 4)) {
+        val month = when("${sdf.substring(3, 4).toInt()}") {
             "1" -> "January"
             "2" -> "February"
             "3" -> "March"
@@ -104,8 +103,7 @@ class NewNoteFragment : Fragment() {
         }
 
         val date = "${sdf.substring(0, 2).toInt()} $month ${sdf.substring(5, 9)}"
-        val time = "${sdf.substring(10, 12).toInt()} ${sdf.substring(13, 15)} $meridian"
-        Log.d("dateTime","date: $date\ntime: $time")
+        val time = "${sdf.substring(10, 12).toInt()}:${sdf.substring(13, 15)} $meridian"
 
 //        if(viewmodel.saveNote(Note(note, date, time)).isCompleted) {
             viewmodel.saveNote(Note(note, date, time))
