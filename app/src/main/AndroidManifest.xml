@@ -24,6 +24,9 @@
         <meta-data
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity
             android:name=".ui.splash.SplashScreen"
@@ -40,5 +43,6 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.DayNight"/>
 
+        <activity android:name="android.support.wearable.activity.ConfirmationActivity" />
     </application>
 </manifest>

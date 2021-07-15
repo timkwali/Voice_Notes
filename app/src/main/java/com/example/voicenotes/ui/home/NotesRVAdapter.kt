@@ -14,8 +14,9 @@ class NotesRVAdapter (private val notes: List<Note>, private val clickListener: 
 
             fun bind(note: Note, action: OnItemClickListener) {
                 binding.apply {
+                    val date = note.date.split(" ")
                     noteItemNoteTv.text = note.note
-                    noteItemDateTv.text = note.date
+                    noteItemDateTv.text = "${date[0]} ${date[1].substring(0, 3)} '${date[2].substring(2)}"
                     noteItemTimeTv.text = note.time
                 }
 

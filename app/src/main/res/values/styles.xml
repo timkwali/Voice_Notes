@@ -3,4 +3,10 @@
     <style name="SplashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_bg</item>
     </style>
+    
+    <style name="toastStyle">
+        <item name="backgroundTint">@drawable/gradient_bg</item>
+        <item name="textColor">@color/jasmine</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>
