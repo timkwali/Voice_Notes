@@ -64,7 +64,7 @@ class SettingsFragment : Fragment(), OnItemClickListener<Setting> {
     override fun onItemClick(item: Setting, position: Int) {
         when(item.name) {
             getString(R.string.sync_with_google) -> toast(item.name)
-            getString(R.string.text_to_speech_settings) -> toast(item.name)
+            getString(R.string.text_to_speech_settings) -> findNavController().navigate(R.id.TTPSettingsFragment)
             getString(R.string.delete_all_notes) -> confirmDelete()
             getString(R.string.about) -> toast(item.name)
         }

@@ -25,5 +25,14 @@
     <string name="about">About</string>
     <string name="delete_warning">Are you sure you want to delete all notes?</string>
     <string name="all_notes_delete_success">Successfully deleted all notes!</string>
-    <string name="ttp_settings">TTPSettings</string>
+    <string name="tts_settings">TTS Settings</string>
+    <string name="speech_speed">Speech Speed</string>
+    <string name="speech_pitch">Speech Pitch</string>
+    <string name="ok">OK</string>
+    <string name="_1_0x">1.0x</string>
+    <string name="sample_speech">This is an example to test speech settings.</string>
+    <string name="app_settings">app_settings</string>
+    <string name="speech_speed_setting">speech_speed_setting</string>
+    <string name="speech_pitch_setting">speech_pitch_setting</string>
+    <string name="saved">Saved</string>
 </resources>

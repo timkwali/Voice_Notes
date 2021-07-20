@@ -2,6 +2,7 @@ package com.example.voicenotes.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.marginBottom
 import androidx.recyclerview.widget.RecyclerView
 import com.example.voicenotes.data.Note
 import com.example.voicenotes.databinding.NotesItemBinding

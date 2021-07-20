@@ -2,6 +2,7 @@ package com.example.voicenotes.utils
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.wearable.activity.ConfirmationActivity
 import android.view.View
 import android.widget.Toast
@@ -45,5 +46,17 @@ object Utils {
             putExtra(ConfirmationActivity.EXTRA_MESSAGE, message)
         }
         context.startActivity(intent)
+    }
+
+    fun Fragment.saveFloat(key: String, value: Float) {
+        val sharedPref: SharedPreferences = requireContext().getSharedPreferences(getString(R.string.app_settings), Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putFloat(key, value)
+        editor.commit()
+    }
+
+    fun Fragment.getFloat(key: String): Float {
+        val sharedPref: SharedPreferences = requireContext().getSharedPreferences(getString(R.string.app_settings), Context.MODE_PRIVATE)
+        return sharedPref.getFloat(key, 1.0F)
     }
 }

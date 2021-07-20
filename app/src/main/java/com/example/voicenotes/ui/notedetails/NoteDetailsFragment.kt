@@ -17,6 +17,7 @@ import com.example.voicenotes.utils.Constants.SPEECH_PITCH
 import com.example.voicenotes.utils.Constants.SPEECH_SPEED
 import com.example.voicenotes.utils.Utils.displayCancel
 import com.example.voicenotes.utils.Utils.displayConfirmation
+import com.example.voicenotes.utils.Utils.getFloat
 import com.example.voicenotes.utils.Utils.gone
 import com.example.voicenotes.utils.Utils.toast
 import com.example.voicenotes.utils.Utils.visible
@@ -123,8 +124,8 @@ class NoteDetailsFragment : Fragment(), CircularProgressLayout.OnTimerFinishedLi
 
     private fun speak() {
         val text = binding.noteDetailsNoteTv.text.toString()
-        val pitch: Float = SPEECH_PITCH
-        val speed: Float = SPEECH_SPEED
+        val pitch: Float = getFloat(getString(R.string.speech_pitch_setting))
+        val speed: Float = getFloat(getString(R.string.speech_speed_setting))
         tts.apply {
             setPitch(pitch)
             setSpeechRate(speed)
