@@ -35,7 +35,7 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/TTPSettingsFragment"
-        android:name="com.example.voicenotes.ui.ttp.TTPSettingsFragment"
+        android:name="com.example.voicenotes.ui.tts.TTPSettingsFragment"
         android:label="fragment_ttp_settings"
-        tools:layout="@layout/fragment_ttp_settings" />
+        tools:layout="@layout/fragment_tts_settings" />
 </navigation>

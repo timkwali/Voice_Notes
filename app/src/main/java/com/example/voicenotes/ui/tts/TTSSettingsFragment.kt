@@ -1,4 +1,4 @@
-package com.example.voicenotes.ui.ttp
+package com.example.voicenotes.ui.tts
 
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
